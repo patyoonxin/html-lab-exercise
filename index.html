@@ -12,6 +12,7 @@
 			<a href="#TopSkills">Top Skills</a>
 			<a href="#Academic">Academic Records</a>
 			<a href="#Media">My Project</a>
+			<a href="#Contact">Contact Me</a>
 		</nav>
 	</header>
 	
@@ -70,7 +71,8 @@
 				<dt>API</dt>
 				<dd>A set of rules that allows different software applications to communicate with each other.</dd>
 			</dl>
-		</section id="Academic">
+		</section>
+		<section id="Academic">
 			<h2>Academic Records</h2>
 
 			<table border="1" cellpadding="8" cellspacing="0">
@@ -135,6 +137,7 @@
 					<tr><td colspan="4">Total</td><td><strong>16</strong></td><td></td></tr>
 				</tfoot>
 			</table>
+		</section>
 
 		<section id="Media">
 			<h2>My Project</h2>
@@ -145,9 +148,65 @@
 				</a>
 				<figcaption>Esperanto Learning Game, MoonHacks by Moon Corp</figcaption>
 				<br clear="all"> <!--To clear the floating effect-->
-
-
 			</figure>
+		</section>
+
+		<section id="Contact">
+			<h2>Contact Me</h2>
+			<form action=" " method="POST">
+				<fieldset>
+					<legend>Send me a message</legend>
+
+					<h4>Personal Information</h4>
+					<label for="name">Full name:</label><br> 
+					<input type="text" id="name" name="name" required style="border: 2px solid #996600; background-color: #ffffcc; padding: 6px; font-size: 14px;"><br><br>
+					<label for="email">Email:</label><br>
+					<input type="email" id="email" name="email" required style="border: 2px solid #996600; background-color: #ffffcc; padding: 6px; font-size: 14px;"><br><br>
+					<label for="tel">Phone number:</label><br>
+					<input type="tel" id="tel" name="tel" required style="border: 2px solid #996600; background-color: #ffffcc; padding: 6px; font-size: 14px;"><br><br>
+					<label for="age">Age:</label><br>
+					<input type="number" id="age" name="age" style="border: 2px solid #996600; background-color: #ffffcc; padding: 6px; font-size: 14px;"><br><br>
+					<label for="dob">Date of Birth:</label><br>
+					<input type="date" id="dob" name="dob"><br><br>
+
+					<label for="subject">Subject:</label><br>
+					<select name="subject" id="subject">
+						<optgroup label="Academic">
+							<option value="assignHelp">Assignment Help</option>
+						</optgroup>
+						<optgroup label="Technical">
+							<option value="website">Website Issue</option>
+							<option value="bug">Bug Report</option>
+						</optgroup>
+					</select>
+
+					<h4>Services Interested In</h4>
+					<input type="checkbox" id="webd" name="interest" value="Web Development" checked>
+					<label for="webd">Web Development</label><br>
+					<input type="checkbox" id="danalysis" name="interest" value="Data Analysis">
+					<label for="danalysis">Data Analysis</label><br>
+					<input type="checkbox" id="uiux" name="interest" value="UI/UX Design">
+					<label for="uiux">UI/UX Design</label><br>
+
+					<h4>Prefered contact method</h4>
+					<input type="radio" id="emaill" name="contactm" value="Email" checked>
+					<label for="emaill">Email</label><br>
+					<input type="radio" id="phone" name="contactm" value="Phone">
+					<label for="phone">Phone</label><br>
+					<input type="radio" id="whatsapp" name="contactm" value="Whatsapp">
+					<label for="whatsapp">Whatsapp</label><br>
+
+					<h4>Satisfaction Level</h4>
+					<label for="level">Please drag from 1 to 10:</label><br>
+					<input type="range" id="level" name="level" min="1" max="10">
+
+					<h4>Message</h4>
+					<label for="box">Feel free to leave a message:</label><br>
+					<textarea id="box" name="box" rows="4" cols="50" maxlength=200 placeholder="Hello World!" style="border: 2px solid #996600; background-color: #ffffcc; padding: 6px; font-size: 14px;"></textarea><br><br>
+
+					<input type="submit" value="Submit">
+				</fieldset>
+			</form>
 		</section>
 	</main>
 	
