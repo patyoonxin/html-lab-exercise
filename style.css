@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+	--color-primary: #5d3629;
+	--color-primary-light: #fcf8f2;
+
+	--color-accent: #fffefe;
+	--color-accent-light: #ffffff;
+
+	--color-grey-dark: #9d8879;
+	--color-grey: #cfc7c0;
+	--color-grey-light: #dddddd;
+
+	--font-heading: 'Playfair', serif;
+    --font-body: 'Garamond', serif;
+
+    --space-sm: 0.8rem;
+    --space-md: 1.6rem;
+    --space-lg: 3.2rem;
+
+}
