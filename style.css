@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+/*CSS RESET*/
 *,
 *::before,
 *::after {
@@ -13,24 +14,189 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  color: var(--color-default);
 }
 
-:root{
-	--color-primary: #5d3629;
-	--color-primary-light: #fcf8f2;
+/*DESIGN TOKENS*/
+:root {
+  /* Primary Colors */
+  --color-primary: #5d3629;			/* for nav,footer, big heading */
+  --color-primary-light: #fcf8f2;	/* for main background */
 
-	--color-accent: #fffefe;
-	--color-accent-light: #ffffff;
+  /* Accent Colors */
+  --color-accent: #fffefe;			/* nearly white for small background */
+  --color-accent-light: #ffffff;	/* white for constrast font color*/
 
-	--color-grey-dark: #9d8879;
-	--color-grey: #cfc7c0;
-	--color-grey-light: #dddddd;
+  /* Neutral Colors */
+  --color-grey-dark: #9d8879;		/* for heading, p font color */
+  --color-grey: #cfc7c0;			/* for small font color */
+  --color-grey-light: #dddddd;
+  --color-default: #000000;			/* black for default */
 
-	--font-heading: 'Playfair', serif;
-    --font-body: 'Garamond', serif;
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Garamond', serif;
 
-    --space-sm: 0.8rem;
-    --space-md: 1.6rem;
-    --space-lg: 3.2rem;
+  /* Spacing */
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 3.2rem;
+}
 
+
+/*TYPOGRAPHY*/
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: 2.6rem;
+  line-height: 1.3;
+  color: var(--color-primary);
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 1.4;
+  color: var(--color-grey-dark);
+}
+
+h4 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--color-grey-dark);
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-grey-dark);
+  margin-bottom: var(--space-md); 	/* margin = spacing between paragraphs */
+}
+
+small {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--color-grey);
+}
+
+blockquote {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-primary);
+  background-color: var(--color-accent);
+  padding: var(--space-md); 		/* padding = space inside */
+  margin: var(--space-md) 0; 		/* margin = space outside */
+  border-left: 0.4rem solid var(--color-primary);
+}
+
+code {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  background-color: var(--color-accent);
+  padding: 0.2rem 0.4rem;			/* padding = space inside (vertical horizontal)*/
+}
+
+caption {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  margin-bottom: var(--space-sm);	/* margin = spacing between paragraphs*/
+}
+
+
+/* LAYOUT */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-accent-light);
+  padding: var(--space-md);
+}
+
+nav {
+  background-color: var(--color-primary);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+main {
+  background-color: var(--color-accent);
+  padding: var(--space-lg);
+}
+
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-accent-light);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+
+/* NAV LINKS*/
+
+nav a {
+  padding: var(--space-sm);		/* padding = clickable space */
+  margin: var(--space-sm);		/* margin = spacing between links */
+  border-radius: 0.5rem;
+}
+
+
+/* LINKS STATES*/
+
+a:link {
+  color: var(--color-accent-light);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-primary);
+  background-color: var(--color-accent);
+}
+
+a:active {
+  color: var(--color-accent-light);
+}
+
+/* FORM */
+input, textarea, select {
+  padding: var(--space-sm);						/* padding = inner space */
+  border: 0.2rem solid var(--color-grey);
+  margin-bottom: var(--space-md);
+  font-size: 1.4rem;
+}
+
+/* accessible focus indicator */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent);	/* box-shadow: horizontal vertical blur color;*/
+}
+
+
+/* CARD , PANEL*/
+.card {
+  padding: var(--space-md); 					/* padding = inside spacing */
+  margin: var(--space-lg);						/*margin = outside spacing */
+  background-color: var(--color-accent);
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.1);
+}
+
+/* BUTTON */
+.button {
+  color: var(--color-accent);
+  border-radius: 0.8rem;
+  background-color: var(--color-primary);
+  padding: var(--space-sm);
 }
