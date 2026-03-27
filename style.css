@@ -1,3 +1,10 @@
+/* ============================================
+ BREAKPOINTS
+ mobile-first base: 320px and up (default)
+ tablet: @media (min-width: 600px)
+ desktop: @media (min-width: 1024px)
+============================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 /*CSS RESET*/
@@ -113,6 +120,10 @@ caption {
   margin-bottom: var(--space-sm);	/* margin = spacing between paragraphs*/
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* LAYOUT */
 header {
@@ -152,15 +163,6 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-/* CARD , PANEL*/
-.card {
-  padding: var(--space-md); 					/* padding = inside spacing */
-  margin: var(--space-lg);						/*margin = outside spacing */
-  background-color: var(--color-accent);
-  border-radius: 1rem;
-  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.1);
-}
-
 /* BUTTON */
 .button {
   color: var(--color-accent);
@@ -190,9 +192,8 @@ input:focus, textarea:focus, select:focus {
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap; 								     /* wrap when screen is small */
   gap: var(--space-sm); 					     /* spacing between links */
-  margin-left: auto; 							     /* pushes links to the right */
+  flex-direction: column;              /* stack vertically */
 }
 
 /* LINKS */
@@ -223,6 +224,7 @@ input:focus, textarea:focus, select:focus {
   align-items: center;
   justify-content: space-between;
   padding: var(--space-lg);
+  flex-direction: column;             /* stack */
 }
 
 .header-content .text{
@@ -237,12 +239,14 @@ input:focus, textarea:focus, select:focus {
 /* TASK 4*/
 .page-card{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /*grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));*/
+  grid-template-columns: 1fr;         /* single column */
   gap: 1.5rem;
 }
 
 .card{
   background-color: var(--color-accent-light);
+  margin: var(--space-md);
   padding: var(--space-md);
   border-radius: 1rem;
   box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.1);
@@ -263,7 +267,8 @@ input:focus, textarea:focus, select:focus {
 
 .two-column{
   display: grid;
-  grid-template-columns: 1fr 280px;
+  /*grid-template-columns: 1fr 280px;*/
+  grid-template-columns: 1fr;               /* no sidebar */
   gap: 1.5rem;
 }
 
@@ -277,4 +282,39 @@ input:focus, textarea:focus, select:focus {
   background-color: var(--color-grey-light);
   border-radius: 1rem;
   place-items: center;
+}
+
+/* TABLET */
+@media (min-width: 600px) {
+    .page-card {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-content {
+      flex-direction: row; 
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .page-card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .two-column {
+    grid-template-columns: 1fr 280px;       /* show sidebar */
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
