@@ -121,11 +121,12 @@ code {
   padding: 0.2rem 0.4rem;			/* padding = space inside (vertical horizontal)*/
 }
 
-caption {
-  font-size: 1.4rem;
+figcaption {
+  font-size: 1.6rem;
   line-height: 1.6;
-  color: var(--color-grey);
+  color: var(--color-grey-dark);
   margin-bottom: var(--space-sm);	/* margin = spacing between paragraphs*/
+  text-align:center;
 }
 
 img {
@@ -157,6 +158,11 @@ footer {
 
 
 /* FORM */
+input[type=text], input[type="email"], input[type="tel"], input[type="number"]{
+  width: 200px;
+  transition: width 0.3s ease-in-out;
+}
+
 input, textarea, select {
   padding: var(--space-sm);						/* padding = inner space */
   border: 0.2rem solid var(--color-grey);
@@ -165,13 +171,19 @@ input, textarea, select {
   font-size: 1.4rem;
 }
 
+input[type=text]:hover,input[type=text]:focus,
+input[type=email]:hover, input[type=email]:focus,
+input[type="tel"]:hover,input[type="tel"]:focus,
+input[type="number"]:hover,input[type="number"]:focus{
+  width:100%;
+}
+
 /* accessible focus indicator */
 input:focus, textarea:focus, select:focus {
   outline: none;
   box-shadow: 0 0 0 3px var(--color-accent);	/* box-shadow: horizontal vertical blur color;*/
   border-color: var(--color-primary);
 }
-
 
 /* BUTTON */
 .button {
@@ -256,6 +268,7 @@ input:focus, textarea:focus, select:focus {
   border-radius: 50%;
 }
 
+
 /* TASK 4*/
 .page-card{
   display: grid;
@@ -337,6 +350,13 @@ input:focus, textarea:focus, select:focus {
     flex-direction: row;
     justify-content: flex-end;
   }
+}
+
+table,th,td{
+  padding: var(--space-sm);
+  border: 1px solid;
+  border-collapse: collapse;
+  border-color: var(--color-primary);
 }
 
 tbody tr:nth-child(even) {
