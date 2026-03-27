@@ -190,9 +190,9 @@ input:focus, textarea:focus, select:focus {
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap; 								/* wrap when screen is small */
-  gap: var(--space-sm); 						/* spacing between links */
-  margin-left: auto; 							/* pushes links to the right */
+  flex-wrap: wrap; 								     /* wrap when screen is small */
+  gap: var(--space-sm); 					     /* spacing between links */
+  margin-left: auto; 							     /* pushes links to the right */
 }
 
 /* LINKS */
@@ -232,4 +232,49 @@ input:focus, textarea:focus, select:focus {
 .profile-img img {
   width: 150px;
   border-radius: 50%;
+}
+
+/* TASK 4*/
+.page-card{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card{
+  background-color: var(--color-accent-light);
+  padding: var(--space-md);
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.1);
+
+  /* To make equal height */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;               /* hover effect */
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card-featured {
+  grid-column: span 2; 
+}
+
+.two-column{
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.5rem;
+}
+
+.main-content {
+  
+}
+
+.sidebar {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md);
+  background-color: var(--color-grey-light);
+  border-radius: 1rem;
+  place-items: center;
 }
